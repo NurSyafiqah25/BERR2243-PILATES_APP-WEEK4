@@ -1,5 +1,5 @@
 # BERR2243-PILATES_APP-WEEK4
-# Gym Management System API
+# Pilates Management System
 
 ## Description
 A RESTful API for managing gym members, trainers, classes, and bookings. This system handles member registration, class scheduling, trainer management, and administrative functions.
