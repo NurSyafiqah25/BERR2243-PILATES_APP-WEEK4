@@ -17,7 +17,7 @@ A RESTful API for managing gym members, trainers, classes, and bookings. This sy
 git clone [your-repo-url]
 cd [repo-name]
 Install dependencies:
-
+```
 bash
 npm install express mongoose bcrypt jsonwebtoken
 Start the server:
@@ -57,11 +57,12 @@ Trainer: Register, Login, View assigned members, Update availability
 
 Admin: Manage memberships, Block users, Create/Update/Delete classes
 
-Use Case Diagram
+## Use Case Diagram
 
 Data Models
 User (Member/Trainer)
 javascript
+```
 {
   name: String,
   email: String,
@@ -84,6 +85,7 @@ javascript
   },
   members: [String] // array of member IDs
 }
+```
 
 ## Troubleshooting
 Common Issues
