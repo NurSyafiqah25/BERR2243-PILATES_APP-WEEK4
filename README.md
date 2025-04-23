@@ -23,6 +23,7 @@ npm install express mongoose bcrypt jsonwebtoken
 Start the server:
 
 bash
+```
 node index.js
 API Endpoints
 Authentication
@@ -48,6 +49,8 @@ PUT	/users/{id}/block	Block user	200 OK, 403 Forbidden	{ isBlocked: true }
 POST	/classes	Create class	201 Created	{ name, trainerId, schedule }
 PUT	/classes/{id}	Update class	200 OK, 404 Not Found	{ schedule, trainerId }
 DELETE	/classes/{id}	Delete class	204 No Content, 404 Not Found	-
+
+```
 Use Case Diagram
 Key Actors:
 
