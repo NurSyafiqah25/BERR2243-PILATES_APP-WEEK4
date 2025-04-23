@@ -118,6 +118,7 @@ mongod
 Check connection URL in index.js (default: mongodb://localhost:27017)
 
 ## Project Structure
+```
 gym-management-api/
 ├── README.md
 ├── index.js           # Main application file
@@ -138,6 +139,8 @@ gym-management-api/
 │   └── adminRoutes.js
 └── middleware/
     └── auth.js        # Authentication middleware
+
+```
  ## License
 This project is for educational purposes only
 
