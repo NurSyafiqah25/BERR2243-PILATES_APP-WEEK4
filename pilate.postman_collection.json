@@ -219,7 +219,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"Evening Pilates\",\r\n  \"schedule\": \"Mon, Wed, Fri - 6:00 PM\"\r\n}\r\n",
+					"raw": "{\r\n  \"title\": \"Updated Pilates Class\",\r\n  \"schedule\": \"Monday 9:00 AM\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -227,7 +227,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/classes/60c72b9b8f1b2f3b60e3f3a1",
+					"raw": "http://localhost:3000/classes/680e3e72174174e5aabe2aba",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -235,7 +235,7 @@
 					"port": "3000",
 					"path": [
 						"classes",
-						"60c72b9b8f1b2f3b60e3f3a1"
+						"680e3e72174174e5aabe2aba"
 					]
 				}
 			},
@@ -250,7 +250,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/classes/60c72b9b8f1b2f3b60e3f3a1",
+					"raw": "http://localhost:3000/classes/680e3e72174174e5aabe2aba",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -258,7 +258,53 @@
 					"port": "3000",
 					"path": [
 						"classes",
-						"60c72b9b8f1b2f3b60e3f3a1"
+						"680e3e72174174e5aabe2aba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Registration",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"adminpassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"login"
 					]
 				}
 			},
