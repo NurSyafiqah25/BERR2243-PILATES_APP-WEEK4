@@ -1,5 +1,0 @@
-# Ignore node_modules
-node_modules/
-# Optional: Ignore environment files and logs
-.env
-*.log
