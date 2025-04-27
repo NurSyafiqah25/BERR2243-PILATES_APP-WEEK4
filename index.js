@@ -48,12 +48,19 @@ const MembershipSchema = new mongoose.Schema({
   status: String
 });
 
+const AdminSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  password: String
+});
+
 const User = mongoose.model('User', UserSchema);
 const Trainer = mongoose.model('Trainer', TrainerSchema);
 const Class = mongoose.model('Class', ClassSchema);
 const Booking = mongoose.model('Booking', BookingSchema);
 const Payment = mongoose.model('Payment', PaymentSchema);
 const Membership = mongoose.model('Membership', MembershipSchema);
+const Admin = mongoose.model('Admin', AdminSchema);
 
 // ✅ Member:
 
@@ -98,13 +105,30 @@ app.post('/trainer/login', (req, res) => {
 
 // ✅ Admin:
 
-// 6. Manage memberships
+// 6. Admin registration
+app.post('/admins', async (req, res) => {
+  const admin = new Admin(req.body);
+  await admin.save();
+  res.status(201).json({
+    message: 'Admin registered successfully',
+    adminId: admin._id,     // Return admin ID
+    name: admin.name,       // Return admin name
+    email: admin.email,     // Return admin email
+  });
+});
+
+// 7. Admin login
+app.post('/admin/login', (req, res) => {
+  res.status(200).send('Admin login successful');
+});
+
+// 8. Manage memberships
 app.put('/memberships/:id', async (req, res) => {
   await Membership.findByIdAndUpdate(req.params.id, req.body);
   res.status(200).send(`Membership ID ${req.params.id} updated`);
 });
 
-// 7. Create class
+// 9. Create class
 app.post('/classes', async (req, res) => {
   const pilatesClass = new Class(req.body);
   await pilatesClass.save();
@@ -114,27 +138,17 @@ app.post('/classes', async (req, res) => {
   });
 });
 
-// 8. Update class
+// 10. Update class
 app.put('/classes/:id', async (req, res) => {
   await Class.findByIdAndUpdate(req.params.id, req.body);
   res.status(200).send(`Class ID ${req.params.id} updated`);
 });
 
-// 9. Delete class
+// 11. Delete class
 app.delete('/classes/:id', async (req, res) => {
   await Class.findByIdAndDelete(req.params.id);
   res.status(204).send();
 });
-
-// // 10. Get all classes (Retrieve class details including classId)
-// app.get('/classes', async (req, res) => {
-//   try {
-//     const classes = await Class.find();
-//     res.status(200).json(classes); // Return all classes with their classIds
-//   } catch (err) {
-//     res.status(500).json({ message: 'Error fetching classes', error: err });
-//   }
-// });
 
 // Start the server
 app.listen(port, () => {
